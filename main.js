@@ -67,7 +67,7 @@ const max = (a, y) => {
 console.log(max(5, 6));
 
 const minTern = (a, b) => {
-  return (a < b) ? a : b;
+  return a < b ? a : b;
 };
 console.log(minTern(5, 6));
 
