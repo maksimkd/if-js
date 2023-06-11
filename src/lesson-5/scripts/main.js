@@ -8,3 +8,63 @@ const getDate = (str) => {
   return str.replace(re, '$<day>.$<month>.$<year>');
 };
 console.log(getDate(date));
+
+//=============================================================
+
+const data = [
+  {
+    country: 'Russia',
+    city: 'Saint Petersburg',
+    hotel: 'Hotel Leopold',
+  },
+  {
+    country: 'Spain',
+    city: 'Santa Cruz de Tenerife',
+    hotel: 'Apartment Sunshine',
+  },
+  {
+    country: 'Slowakia',
+    city: 'Vysokie Tatry',
+    hotel: 'Villa Kunerad',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hostel Friendship',
+  },
+  {
+    country: 'Indonesia',
+    city: 'Bali',
+    hotel: 'Ubud Bali Resort&SPA',
+  },
+  {
+    country: 'Netherlands',
+    city: 'Rotterdam',
+    hotel: 'King Kong Hostel',
+  },
+  {
+    country: 'Marocco',
+    city: 'Ourika',
+    hotel: 'Rokoko Hotel',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hotel Rehberge Berlin Mitte',
+  },
+];
+
+const searchMatches = (str) => {
+  const arr = [];
+  for (let i = 0; i < data.length; i++) {
+    if (
+      str.toLowerCase() === data[i].country.toLowerCase() ||
+      str.toLowerCase() === data[i].city.toLowerCase() ||
+      str.toLowerCase() === data[i].hotel.toLowerCase()
+    ) {
+      arr.push(`${data[i].country}, ${data[i].city}, ${data[i].hotel}`);
+    }
+  }
+  return arr;
+};
+console.log(searchMatches('Germany'));
