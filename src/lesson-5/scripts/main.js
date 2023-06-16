@@ -58,13 +58,16 @@ const searchMatches = (str) => {
   const arr = [];
   for (let i = 0; i < data.length; i++) {
     if (
-      str.toLowerCase() === data[i].country.toLowerCase() ||
-      str.toLowerCase() === data[i].city.toLowerCase() ||
-      str.toLowerCase() === data[i].hotel.toLowerCase()
+      data[i].country.toLowerCase().includes(str.toLowerCase()) ||
+      data[i].city.toLowerCase().includes(str.toLowerCase()) ||
+      data[i].hotel.toLowerCase().includes(str.toLowerCase())
     ) {
       arr.push(`${data[i].country}, ${data[i].city}, ${data[i].hotel}`);
     }
   }
+  if (arr.length === 0) {
+    return console.log('Введи корректное значение!');
+  }
   return arr;
 };
-console.log(searchMatches('Germany'));
+console.log(searchMatches('Germ'));
