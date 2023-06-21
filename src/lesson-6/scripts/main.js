@@ -231,3 +231,30 @@ const getNewObj = (arr) => {
 };
 
 console.log(getNewObj(hotels));
+
+//======================================================
+
+const daysInMonth = 30;
+const daysInWeek = 7;
+const dayOfWeek = 4;
+const getCalendarMonth = (daysInMonth, daysInWeek, dayOfWeek) => {
+  const result = [];
+  let week = [];
+  const weekValue = Math.ceil(daysInMonth / daysInWeek);
+  let start = daysInMonth - dayOfWeek + 1;
+
+  for (let i = 0; i < weekValue; i++) {
+    for (let j = 0; j < daysInWeek; j++) {
+      if (start > daysInMonth) {
+        start = 1;
+      }
+      week.push(start);
+      start++;
+    }
+    result.push(week);
+    week = [];
+  }
+  return result;
+};
+
+console.log(getCalendarMonth(daysInMonth, daysInWeek, dayOfWeek));
