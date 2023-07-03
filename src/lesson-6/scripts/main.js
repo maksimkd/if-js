@@ -239,11 +239,11 @@ const daysInWeek = 7;
 const dayOfWeek = 4;
 const getCalendarMonth = (daysInMonth, daysInWeek, dayOfWeek) => {
   const result = [];
-  let week = [];
   const weekValue = Math.ceil(daysInMonth / daysInWeek);
   let start = daysInMonth - dayOfWeek + 1;
 
   for (let i = 0; i < weekValue; i++) {
+    let week = [];
     for (let j = 0; j < daysInWeek; j++) {
       if (start > daysInMonth) {
         start = 1;
