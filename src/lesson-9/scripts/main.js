@@ -32,3 +32,40 @@ text1.addEventListener('click', changeStyle({ ...colors }));
 text2.addEventListener('click', changeStyle({ ...colors }));
 
 text3.addEventListener('click', changeStyle({ ...colors }));
+
+//=================================
+
+
+const daysInMonth = 30;
+const daysInWeek = 7;
+const dayOfWeek = 4;
+const getCalendarMonth = (
+  daysInMonth,
+  daysInWeek,
+  dayOfWeek,
+  checkInDate,
+  checkOutDate,
+) => {
+  const result = [];
+  const weekValue = Math.ceil(daysInMonth / daysInWeek);
+  let start = daysInMonth - dayOfWeek + 1;
+
+  for (let i = 0; i < weekValue; i++) {
+    const week = [];
+    for (let j = 0; j < daysInWeek; j++) {
+      if (start > daysInMonth) {
+        start = 1;
+      }
+      week.push({
+        dayOfMonth: start,
+        notCurrentMonth: false,
+        selectedDay: (start >= checkInDate && start <= checkOutDate) || false,
+      });
+      start++;
+    }
+    result.push(week);
+  }
+  return result;
+};
+
+console.log(getCalendarMonth(daysInMonth, daysInWeek, dayOfWeek, 5, 15));
