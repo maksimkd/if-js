@@ -35,7 +35,6 @@ text3.addEventListener('click', changeStyle({ ...colors }));
 
 //=================================
 
-
 const daysInMonth = 30;
 const daysInWeek = 7;
 const dayOfWeek = 4;
@@ -58,7 +57,7 @@ const getCalendarMonth = (
       }
       week.push({
         dayOfMonth: start,
-        notCurrentMonth: false,
+        notCurrentMonth: (start >= dayOfWeek && start <= daysInMonth) || false,
         selectedDay: (start >= checkInDate && start <= checkOutDate) || false,
       });
       start++;
