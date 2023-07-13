@@ -1,8 +1,8 @@
 @keyframes underline-link {
-    from {
-        width: 0;
-    }
-    to {
-        width: 85%;
-    }
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
 }

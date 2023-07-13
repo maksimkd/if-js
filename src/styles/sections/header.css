@@ -36,7 +36,7 @@
 }
 
 .nav-links__item:hover:after {
-  content: " ";
+  content: ' ';
   position: absolute;
   border: 2px solid var(--accent-yellow-color);
   width: 85%;

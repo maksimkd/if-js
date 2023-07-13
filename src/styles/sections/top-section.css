@@ -1,6 +1,6 @@
 .top-section {
   padding-top: 290px;
-  background: url("../../images/jpg/top-section/top-section.jpg") center;
+  background: url('../../images/jpg/top-section/top-section.jpg') center;
   min-height: 100vh;
   background-size: cover;
   padding-bottom: var(--block-space);
