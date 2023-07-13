@@ -90,6 +90,15 @@ function displayContent(arr) {
       item.country,
     );
   });
+
+  const newBtn = document.createElement('button');
+  newBtn.classList.add('btn', 'arrow-block', 'homes__arrow-block');
+  element.append(newBtn);
+  newBtn.innerHTML = `
+      <svg class="arrow">
+        <use href="../src/images/favicons/sprite.svg#arrow" />
+      </svg>
+  `;
 }
 
 displayContent(data);
