@@ -77,4 +77,15 @@ function createCard(arr) {
   `;
 }
 
+function displayContent(array) {
+  const element = document.querySelector('.homes__cards');
 
+  array.forEach((item) => {
+    const newEl = document.createElement('li');
+    newEl.classList.add('col-lg-3', 'col-md-6', 'col-sm-3', 'homes__card');
+    element.append(newEl);
+    newEl.innerHTML = createCard(item);
+  });
+}
+
+displayContent(data);
