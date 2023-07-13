@@ -65,26 +65,30 @@ const data = [
   // },
 ];
 
-function createCard(arr) {
+function createCard(imageUrl, name, city, country) {
   return `
   <img
                 class="homes__img"
-                src="${arr.imageUrl}"
+                src="${imageUrl}"
                 alt="Hotel Leopold"
               />
-              <a class="link homes__link" href="#">${arr.name}</a>
-              <p class="homes__text">${arr.city}, ${arr.country}</p>
+              <a class="link homes__link" href="#">${name}</a>
+              <p class="homes__text">${city}, ${country}</p>
   `;
 }
 
-function displayContent(array) {
+function displayContent(arr) {
   const element = document.querySelector('.homes__cards');
-
-  array.forEach((item) => {
+  arr.forEach((item) => {
     const newEl = document.createElement('li');
     newEl.classList.add('col-lg-3', 'col-md-6', 'col-sm-3', 'homes__card');
     element.append(newEl);
-    newEl.innerHTML = createCard(item);
+    newEl.innerHTML = createCard(
+      item.imageUrl,
+      item.name,
+      item.city,
+      item.country,
+    );
   });
 }
 
